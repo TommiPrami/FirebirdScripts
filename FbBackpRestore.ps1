@@ -14,7 +14,7 @@ $G_DB_PAGE_SIZE = 16384
 function GetBackupFileName
 {
   param(
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ADatabaseFile
+    [Parameter(Mandatory=$true)] [string] $ADatabaseFile
   )
 
   $LBackUpFileName = $(Split-Path -Path $ADatabaseFile) + $("\") + $(Split-Path -Leaf $ADatabaseFile)
@@ -43,8 +43,8 @@ function NormalizeDeleteBackupFileParameter
 function FBBackup
 {
   param(
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ADatabaseFile,
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ABackupFileName
+    [Parameter(Mandatory=$true)] [string] $ADatabaseFile,
+    [Parameter(Mandatory=$true)] [string] $ABackupFileName
   ) 
   
   # Commadline thingy
@@ -63,8 +63,8 @@ function FBBackup
 function FBRestore
 {
   param(
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ABackupFile,
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ADatabaseFile,
+    [Parameter(Mandatory=$true)] [string] $ABackupFile,
+    [Parameter(Mandatory=$true)] [string] $ADatabaseFile,
     [Parameter(Mandatory=$false)] [System.Boolean] $ADeleteBackupFile
   ) 
 
@@ -98,7 +98,7 @@ function FBRestore
 function FBBackupAndRestore
 {
   param(
-    [Parameter(Mandatory=$true)] [System.IO.FileInfo] $ADatabaseFile,
+    [Parameter(Mandatory=$true)] [string] $ADatabaseFile,
     [Parameter(Mandatory=$false)] [System.Boolean] $ADeleteBackupFile
   ) 
 
