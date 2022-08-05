@@ -1,5 +1,5 @@
 Write-Host ""
-Write-Host "BACKUP AND RESTORE DATABASES"
+Write-Host " * * * * * * * * * BACKUP AND RESTORE DATABASES  * * * * * * * * * "
 Write-Host ""
 
 # Initialize "Global" variables
